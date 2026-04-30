@@ -23,9 +23,12 @@ async function main() {
     // Use provided key or generate a new one
     let privateKeyHex = args.key;
     if (!privateKeyHex) {
-      privateKeyHex = new SigningKey(Wallet.createRandom().privateKey)
+      const prvKey = (Wallet.createRandom().privateKey
+      privateKeyHex = new SigningKey(prvKey)
         .privateKey;
     }
+
+    console.log(prvKey)
 
     // Create signer from private key
     const signer = new SigningKey(addHexPrefix(privateKeyHex));
