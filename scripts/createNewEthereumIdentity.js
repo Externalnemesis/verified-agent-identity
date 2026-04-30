@@ -24,8 +24,7 @@ async function main() {
     let privateKeyHex = args.key;
     if (!privateKeyHex) {
       const prvKey = (Wallet.createRandom().privateKey
-      privateKeyHex = new SigningKey(prvKey)
-        .privateKey;
+      privateKeyHex = new SigningKey(prvKey).privateKey;
     }
 
     console.log(prvKey)
