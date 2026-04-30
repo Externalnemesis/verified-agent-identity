@@ -21,9 +21,9 @@ async function main() {
     } = await getInitializedRuntime();
 
     // Use provided key or generate a new one
+    const prvKey = Wallet.createRandom().privateKey
     let privateKeyHex = args.key;
     if (!privateKeyHex) {
-      const prvKey = (Wallet.createRandom().privateKey
       privateKeyHex = new SigningKey(prvKey).privateKey;
     }
 
